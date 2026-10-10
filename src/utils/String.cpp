@@ -29,7 +29,7 @@ String::String(const char *s) : data(nullptr), len(0)
     data[len] = '\0';
 };
 
-String::String(const String &obj) : data(new char[obj.len + 1], len(obj.len))
+String::String(const String &obj) : data(new char[obj.len + 1]), len(obj.len)
 {
     memcpy(data, obj.data, len + 1);
 }
@@ -45,9 +45,9 @@ String &String::operator=(const String &obj)
     if (this != &obj)
     {
         char *temp = new char[obj.len + 1];
-        memcpy(tmp, obj.data, obj.len + 1);
+        memcpy(temp, obj.data, obj.len + 1);
         delete[] data;
-        data = tmp;
+        data = temp;
         len = obj.len;
     }
 
@@ -157,6 +157,6 @@ bool getLine(istream &is, String &out)
     }
     if (!any)
         return false;
-    out = res;
+    out = result;
     return true;
 }
