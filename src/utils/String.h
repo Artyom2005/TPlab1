@@ -16,6 +16,7 @@ public:
 
     String &operator=(const String &obj);
     String &operator+=(const String &obj);
+
     size_t size() const;
     bool empty() const;
     const char *c_str() const;
