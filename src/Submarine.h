@@ -16,7 +16,7 @@ private:
 public:
     Submarine();
     Submarine(double lengh, double width, int crew, double underwatertime,
-              double maxUnderwaterSpeed, double maxSurfaceSpeed, String armanent);
+              double maxUnderwaterSpeed, double maxSurfaceSpeed, const String &armanent);
     Submarine(const Submarine &obj);
 
     virtual ~Submarine();
@@ -29,7 +29,7 @@ public:
     double getUnderwaterTime() const;
     double getMaxUnderwaterSpeed() const;
     double getMaxSurfaceSpeed() const;
-    String &getArmanent() const;
+    const String &getArmanent() const;
 
     // сеттеры
     void setLength(double val);
@@ -39,4 +39,15 @@ public:
     void setMaxUnderwaterSpeed(double val);
     void setMaxSurfaceSpeed(double val);
     void setArmanent(const String &str);
+
+    // переопределяем методы базового класса
+    int getType() const override;
+    String getTypeName() const override;
+    void print(std::ostream &os) const override;
+    void input() override;
+    void edit() override;
+    void save(std::ostream &os) const override;
+    void load(std::istream &is) override;
+    Ship *clone() const override;
+    bool equals(const Ship &obj) const override;
 };
