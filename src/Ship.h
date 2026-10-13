@@ -24,7 +24,7 @@ public:
     virtual void input() = 0;
     virtual void edit() = 0;
     virtual void save(std::ostream &os) const = 0;
-    virtual void load(std::istream &is) const = 0;
+    virtual void load(std::istream &is) = 0;
     virtual Ship *clone() const = 0;
     virtual bool equals(const Ship &obj) const = 0;
 
