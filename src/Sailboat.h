@@ -1,8 +1,7 @@
 #pragma once
 #include "Ship.h"
-#include "String.h"
+#include "utils/String.h"
 
-// Парусник
 class Sailboat : public Ship
 {
     String sailType;

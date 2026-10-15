@@ -1,6 +1,8 @@
 #include "Submarine.h"
-#include "Utils.h"
+#include "utils/Utils.h"
 #include "Exceptions.h"
+#include "utils/String.h"
+#include <iostream>
 
 Submarine::Submarine() : length(0), width(0), crew(0), underwaterTime(0),
                          maxUnderwaterSpeed(0), maxSurfaceSpeed(0), armanent("0")

@@ -1,6 +1,8 @@
 #include "Sailboat.h"
-#include "Utils.h"
+#include "utils/Utils.h"
 #include "Exceptions.h"
+#include "utils/String.h"
+#include <iostream>
 
 using namespace std;
 
@@ -8,14 +10,14 @@ Sailboat::Sailboat()
     : sailType(""), name(""), military(false),
       hullLength(0), speed(0), crew(0)
 {
-    cout << "Конструктор катера без параметров\n";
+    cout << "Конструктор парусника без параметров\n";
 }
 
 Sailboat::Sailboat(const String &sailType, const String &name, bool military,
                    double hullLength, double speed, int crew)
     : military(military), hullLength(0), speed(0), crew(0)
 {
-    cout << "Конструктор катера с параметрами\n";
+    cout << "Конструктор парусника с параметрами\n";
     setSailType(sailType);
     setName(name);
     setHullLength(hullLength);
@@ -27,12 +29,12 @@ Sailboat::Sailboat(const Sailboat &o)
     : Ship(o), sailType(o.sailType), name(o.name), military(o.military),
       hullLength(o.hullLength), speed(o.speed), crew(o.crew)
 {
-    cout << "Конструктор копирования катера\n";
+    cout << "Конструктор копирования парусника\n";
 }
 
 Sailboat::~Sailboat()
 {
-    cout << "Деструктор катера\n";
+    cout << "Деструктор парусника\n";
 }
 
 Sailboat &Sailboat::operator=(const Sailboat &o)
