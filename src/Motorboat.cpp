@@ -39,7 +39,6 @@ Motorboat &Motorboat::operator=(const Motorboat &o)
 {
     if (this != &o)
     {
-        Ship::operator=(o);
         purpose = o.purpose;
         material = o.material;
         hodovKach = o.hodovKach;
