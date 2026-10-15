@@ -37,7 +37,6 @@ Submarine &Submarine::operator=(const Submarine &obj)
 {
     if (this != &obj)
     {
-        Ship::operator=(obj);
         length = obj.length;
         width = obj.length;
         crew = obj.crew;
