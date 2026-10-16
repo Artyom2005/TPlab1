@@ -55,7 +55,7 @@ void Keeper::add(Ship *obj)
     }
     delete[] items;
     items = temp;
-    count++;
+    ++count;
 }
 
 void Keeper::check(int index) const

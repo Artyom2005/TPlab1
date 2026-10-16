@@ -7,13 +7,13 @@
 Submarine::Submarine() : length(0), width(0), crew(0), underwaterTime(0),
                          maxUnderwaterSpeed(0), maxSurfaceSpeed(0), armanent("0")
 {
-    std::cout << "Создана субмарина без параметров";
+    std::cout << "Создана субмарина без параметров\n";
 }
 
 Submarine::Submarine(double lengh, double width, int crew, double underwatertime,
                      double maxUnderwaterSpeed, double maxSurfaceSpeed, const String &armanent)
 {
-    std::cout << "Создана субмарина с параметрами";
+    std::cout << "Создана субмарина с параметрами\n";
     setLength(lengh);
     setWidth(width);
     setCrew(crew);
@@ -27,7 +27,7 @@ Submarine::Submarine(const Submarine &obj) : length(obj.length), width(obj.width
                                              underwaterTime(obj.underwaterTime), maxUnderwaterSpeed(obj.maxUnderwaterSpeed),
                                              maxSurfaceSpeed(obj.maxSurfaceSpeed), armanent(obj.armanent)
 {
-    std::cout << "Создана субмарина конструктором копирования";
+    std::cout << "Создана субмарина конструктором копирования\n";
 }
 
 Submarine::~Submarine()
@@ -61,47 +61,47 @@ const String &Submarine::getArmanent() const { return armanent; }
 void Submarine::setLength(double val)
 {
     if (val < 0)
-        throw ValidationException("длина должна быть положительной");
+        throw ValidationException("длина должна быть положительной\n");
     length = val;
 }
 void Submarine::setWidth(double val)
 {
     if (val < 0)
-        throw ValidationException("ширина должна быть положительной");
+        throw ValidationException("ширина должна быть положительной\n");
     width = val;
 }
 void Submarine::setCrew(int val)
 {
     if (val < 0)
-        throw ValidationException("экипаж должна быть положительной");
+        throw ValidationException("экипаж должна быть положительной\n");
     crew = val;
 }
 void Submarine::setUnderwaterTime(double val)
 {
     if (val < 0)
-        throw ValidationException("время пребывания под водой должна быть положительной");
+        throw ValidationException("время пребывания под водой должна быть положительной\n");
     underwaterTime = val;
 }
 void Submarine::setMaxUnderwaterSpeed(double val)
 {
     if (val < 0)
-        throw ValidationException("подводная скорость должна быть положительной");
+        throw ValidationException("подводная скорость должна быть положительной\n");
     maxUnderwaterSpeed = val;
 }
 void Submarine::setMaxSurfaceSpeed(double val)
 {
     if (val < 0)
-        throw ValidationException("надводная скорость должна быть положительной");
+        throw ValidationException("надводная скорость должна быть положительной\n");
     maxSurfaceSpeed = val;
 }
 void Submarine::setArmanent(const String &str)
 {
     if (Utils::trim(str).empty())
-        throw ValidationException("вооружение не должно быть пустым");
+        throw ValidationException("вооружение не должно быть пустым\n");
 }
 
 int Submarine::getType() const { return SUBMARINE; }
-String Submarine::getTypeName() const { return "Подводная лодка"; }
+String Submarine::getTypeName() const { return "Подводная лодка\n"; }
 
 void Submarine::print(std::ostream &os) const
 {
