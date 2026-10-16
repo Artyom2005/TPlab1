@@ -94,7 +94,7 @@ int main()
                 cout << "сохранили.\n";
                 break;
             }
-            case 6:
+            case 7:
             {
                 String nameFile = Utils::readNonEmpty("имя файла для загрузки: ");
                 keeper.loadFromFile(nameFile);

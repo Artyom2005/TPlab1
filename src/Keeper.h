@@ -13,7 +13,7 @@ private:
 
 public:
     Keeper();
-    Keeper(const Keeper *obj);
+    Keeper(const Keeper &obj);
     ~Keeper();
     Keeper &operator=(const Keeper &obj);
 
