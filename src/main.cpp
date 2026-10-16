@@ -45,6 +45,16 @@ void addObject(Keeper &keeper)
     cout << "добавили объект.";
 }
 
+int chooseIndex(const Keeper &keeper)
+{
+    if (keeper.size() == 0)
+    {
+        throw ValidationException("пустой контейнер");
+    }
+
+    return Utils::readInt("можете выбрать число от 0 до " + intToString(keeper.size() - 1), 0, keeper.size() - 1);
+}
+
 int main()
 {
 #ifdef _WIN32
@@ -83,9 +93,16 @@ int main()
             }
             case 4:
             {
+                int idx = chooseIndex(keeper);
+                cout << keeper[idx] << "\n";
+                break;
             }
             case 5:
             {
+                int idx = chooseIndex(keeper);
+                keeper[idx].edit();
+                cout << "\n"
+                     << "изменили объект." << "\n";
             }
             case 6:
             {
