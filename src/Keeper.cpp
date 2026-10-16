@@ -53,6 +53,7 @@ void Keeper::add(Ship *obj)
     {
         temp[i] = items[i];
     }
+    temp[count] = obj;
     delete[] items;
     items = temp;
     ++count;
@@ -106,8 +107,8 @@ std::ostream &operator<<(std::ostream &os, const Keeper &obj)
     }
     for (int i = 0; i < obj.count; i++)
     {
-        os << "объект " << (i + 1) << "\n"
-           << *obj.items[i];
+        os << "\nобъект " << (i + 1) << "\n"
+           << *obj.items[i] << "----------------------------------\n";
     }
 
     return os;

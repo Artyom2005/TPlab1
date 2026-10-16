@@ -108,12 +108,12 @@ int main()
             cout << "\n"
                  << e.what() << "\n";
         }
-        catch (const ShipException &e)
+        catch (const FileException &e)
         {
             cout << "\n"
                  << e.what() << "\n";
         }
-        catch (const FileException &e)
+        catch (const ShipException &e)
         {
             cout << "\n"
                  << e.what() << "\n";
